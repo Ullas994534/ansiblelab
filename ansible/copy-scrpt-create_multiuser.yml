@@ -1,0 +1,8 @@
+---
+- name: creating users
+  hosts: "*" #all is possible
+  tasks:
+    - ansible.builtin.user: 
+       name: 4321
+       name: 2345
+       state: present

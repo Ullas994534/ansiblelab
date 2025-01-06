@@ -1,0 +1,16 @@
+ - name: Create Multi dir
+   hosts: web
+   become: true
+   tasks:
+     - name: Creating Multi dir with this yml file
+       ansible.builtin.file:
+         path: /home/ansadmin/
+         state: directory
+        
+
+
+
+
+
+
+#Create multi dir is te task pending         

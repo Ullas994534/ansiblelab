@@ -1,0 +1,9 @@
+---
+ - name: remove the user
+   hosts: web
+   become: true
+   tasks:
+     - name: removing the users
+       user:
+         name: james18
+         state: absent
