@@ -1,0 +1,20 @@
+ - name: Remove multi packages
+   hosts: web
+   become: true
+   tasks: 
+      - name: Remove a list of RPM's - It with take some time to execute Please have Patience...Don't be Panic...!
+        ansible.builtin.yum:
+          name:
+          - tree
+          - screen
+          - vsftpd
+#          - ansible
+#          - docker
+#          - git
+#          - java
+#          - vim 
+          state: absent 
+      - name: Remove dependencies that are no longer required and purge their configuration files
+        ansible.builtin.yum:
+          autoremove : yes
+          update_cache: yes

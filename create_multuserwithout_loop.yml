@@ -1,0 +1,11 @@
+---
+ - name: creating a users without loop
+   hosts: web
+   become: true
+   tasks:
+#     - name: Createing multi users
+     - user:
+        name: Johnsin
+        state: present
+        name: abcder
+        state: present

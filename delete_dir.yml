@@ -1,0 +1,10 @@
+---
+ - name: remove a dir
+   hosts: web
+   become: true
+   tasks:
+     - name: remove a dir
+       ansible.builtin.file:
+         path: /home/ansadmin/dir[1:4]
+         state: absent
+#          mode: '0755'

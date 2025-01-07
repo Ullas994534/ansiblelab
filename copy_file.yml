@@ -1,0 +1,10 @@
+---
+ - name: copy the file
+   hosts: web
+   become: true
+   tasks:
+    - name: copy the files
+      ansible.builtin.copy:
+        src: /home/ansadmin/ansible/index.html
+        dest: /home/ansadmin
+

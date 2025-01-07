@@ -1,0 +1,10 @@
+---
+ - name: creating a dir
+   hosts: web
+   become: true
+   tasks:
+     - name: create a dir
+       ansible.builtin.file:
+         path: /home/ansadmin/creating_dir
+         state: directory
+#          mode: '0755'

@@ -1,0 +1,13 @@
+---
+ - name: creating the multiple users
+   hosts: web
+   become: true
+   tasks:
+    - user:
+       name: "{{ item }}"
+       state: present
+      loop:
+        - vivek
+        - ub
+        - name1
+        - name2

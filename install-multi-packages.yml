@@ -1,0 +1,11 @@
+ - name: Install multi packages
+   hosts: web
+   become: true
+   tasks: 
+     - name: Install the latest version of Apache and MariaDB
+       ansible.builtin.package:
+         name:
+           - screen
+           - tree
+         state: latest
+

@@ -1,0 +1,15 @@
+- name: remove file on bo nodes of web servers group
+  hosts: web
+  become: true 
+  tasks:
+
+   - name: remove file
+     ansible.builtin.file:
+       path: /home/ansadmin/createfiletest.txt
+       state: absent
+
+   - name: remove file
+     ansible.builtin.file:
+       path: /home/ansadmin/createfiletest1.txt
+       state: absent
+

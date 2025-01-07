@@ -1,0 +1,21 @@
+ - name: Install multi packages
+   hosts: web
+   become: true
+   tasks: 
+      - name: Install a list of RPM's
+        ansible.builtin.yum:
+          name:
+          - httpd
+          - tree
+          - screen
+          - vsftpd
+          - ansible
+          - docker
+          - git
+          - java
+          - vim 
+          state: present
+      - name: Remove dependencies that are no longer required and purge their configuration files
+        ansible.builtin.yum:
+          autoremove : yes
+          update_cache: yes
